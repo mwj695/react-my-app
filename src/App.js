@@ -1,13 +1,14 @@
-import React,{useState} from "react";
+import { useEffect, useState } from "react";
 
 function App() {
-  const [count,setCount]=useState{0}
+  const [count,setCount]=useState(0)
+  useEffect(()=>{
+    document.title=`clicked ${count} times`
+  })
   return (
     <div className="App">
-      abc
       <p>clicked {count} times</p>
-      <button onclick={()=>setCount(count+1)}>click here</button>
-
+      <button onClick={()=>setCount(count+1)}>click here</button>
     </div>
   );
 }
